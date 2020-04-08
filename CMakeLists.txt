@@ -55,7 +55,6 @@ if (TARGET_LANGUAGE STREQUAL "python" OR TARGET_LANGUAGE STREQUAL "both")
   )
   target_include_directories(rlutilities PUBLIC inc/)
   target_compile_definitions(rlutilities PUBLIC -DGENERATE_PYTHON_BINDINGS)
-  target_compile_definitions(rlutilities PUBLIC -DHAVE_SNPRINTF=1)
   target_compile_features(rlutilities PUBLIC cxx_std_17)
 
 endif()
