@@ -51,6 +51,7 @@ if (TARGET_LANGUAGE STREQUAL "python" OR TARGET_LANGUAGE STREQUAL "both")
   add_compile_options($<$<CXX_COMPILER_ID:GNU>:-D_hypot=hypot>)
 
   pybind11_add_module(rlutilities
+    ${PROJECT_SOURCE_DIR}/src/python_extensions.cc
     ${rlu_sources}
   )
   target_include_directories(rlutilities PUBLIC inc/)
