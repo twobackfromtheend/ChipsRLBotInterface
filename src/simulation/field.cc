@@ -535,7 +535,7 @@ void init_field(pybind11::module & m) {
     .def_static("snap", &Field::snap)
     .def_static("collide", static_cast<ray(*)(const obb &)>(&Field::collide))
     .def_static("collide", static_cast<ray(*)(const sphere &)>(&Field::collide))
-    .def_static("raycast_any", &Field::raycast_any);
+    .def_static("raycast_any", &Field::raycast_any)
     .def_static("read_mesh_files", &Field::read_mesh_files);
 }
 #endif

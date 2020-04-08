@@ -106,55 +106,6 @@ float scale(float dv) {
 	return -1.0f;
 }
 
-#if 0 // We don't want to compile more source files than we need to. This prevents us from compiling car.cc and files required by car.cc.
-void Ball::step(float dt, const Car & c) {
-
-	vec3 p = closest_point_on_obb(x, c.hitbox());
-
-	if (norm(p - x) < collision_radius) {
-
-		vec3 n1 = normalize(p - x);
-
-		mat3 L_b = antisym(p - x);
-		mat3 L_c = antisym(p - c.x);
-
-		mat3 invI_c = dot(c.o, dot(c.invI, transpose(c.o)));
-
-		mat3 M = inv(((1.0f / m) + (1.0f / c.m)) * eye<3>() - (dot(L_b, L_b) / I) - dot(L_c, dot(invI_c, L_c)));
-
-		vec3 Delta_V = (c.v - dot(L_c, c.w)) - (v - dot(L_b, w));
-
-		// compute the impulse that is consistent with an inelastic collision 
-		vec3 J1 = dot(M, Delta_V);
-
-		vec3 J1_perp = fminf(dot(J1, n1), -1.0) * n1;
-		vec3 J1_para = J1 - J1_perp;
-
-		float ratio = norm(J1_perp) / fmaxf(norm(J1_para), 0.001f);
-
-		// scale the parallel component of J1 such that the
-		// Coulomb friction model is satisfied
-		J1 = J1_perp + fminf(1.0f, mu * ratio) * J1_para;
-
-
-		vec3 f = c.forward();
-		vec3 n2 = x - c.x;
-		n2[2] *= 0.35f;
-		n2 = normalize(n2 - 0.35f * dot(n2, f) * f);
-
-		float dv = fminf(norm(v - c.v), 4600.0f);
-		vec3 J2 = m * dv * scale(dv) * n2;
-
-		w += dot(L_b, J1) / I;
-		v += (J1 + J2) / m;
-
-	}
-
-	step(dt);
-
-}
-#endif
-
 std::string Ball::to_json() {
   return nlohmann::json{
     {"x", {x[0], x[1], x[2]}},
@@ -185,6 +136,5 @@ void init_ball(pybind11::module & m) {
 		.def("hitbox", &Ball::hitbox)
 		.def("to_json", &Ball::to_json)
 		.def("step", static_cast<void (Ball::*)(float)>(&Ball::step))
-		.def("step", static_cast<void (Ball::*)(float, const Car &)>(&Ball::step));
 }
 #endif
