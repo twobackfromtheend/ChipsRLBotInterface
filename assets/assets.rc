@@ -1,0 +1,24 @@
+#include "misc/resource.h"
+
+SOCCAR_CORNER_IDS BINARY_FILE soccar_corner_ids.bin
+SOCCAR_CORNER_VERTICES BINARY_FILE soccar_corner_vertices.bin
+SOCCAR_GOAL_IDS BINARY_FILE soccar_goal_ids.bin
+SOCCAR_GOAL_VERTICES BINARY_FILE soccar_goal_vertices.bin
+SOCCAR_RAMPS_1_IDS BINARY_FILE soccar_ramps_1_ids.bin
+SOCCAR_RAMPS_1_VERTICES BINARY_FILE soccar_ramps_1_vertices.bin
+SOCCAR_RAMPS_2_IDS BINARY_FILE soccar_ramps_2_ids.bin
+SOCCAR_RAMPS_2_VERTICES BINARY_FILE soccar_ramps_2_vertices.bin
+
+HOOPS_CORNER_IDS BINARY_FILE hoops_corner_ids.bin
+HOOPS_CORNER_VERTICES BINARY_FILE hoops_corner_vertices.bin
+HOOPS_NET_IDS BINARY_FILE hoops_net_ids.bin
+HOOPS_NET_VERTICES BINARY_FILE hoops_net_vertices.bin
+HOOPS_RIM_IDS BINARY_FILE hoops_rim_ids.bin
+HOOPS_RIM_VERTICES BINARY_FILE hoops_rim_vertices.bin
+HOOPS_RAMPS_1_IDS BINARY_FILE hoops_ramps_1_ids.bin
+HOOPS_RAMPS_1_VERTICES BINARY_FILE hoops_ramps_1_vertices.bin
+HOOPS_RAMPS_2_IDS BINARY_FILE hoops_ramps_2_ids.bin
+HOOPS_RAMPS_2_VERTICES BINARY_FILE hoops_ramps_2_vertices.bin
+
+DROPSHOT_IDS BINARY_FILE dropshot_ids.bin
+DROPSHOT_VERTICES BINARY_FILE dropshot_vertices.bin
