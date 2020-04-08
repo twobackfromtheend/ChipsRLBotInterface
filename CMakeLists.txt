@@ -31,7 +31,6 @@ if (TARGET_LANGUAGE STREQUAL "cpp" OR TARGET_LANGUAGE STREQUAL "both")
   )
   target_include_directories(rlutilities_cpp PUBLIC inc)
   target_compile_features(rlutilities_cpp PUBLIC cxx_std_17)
-  target_link_libraries(rlutilities_cpp PUBLIC Xinput)
 
   # ensures a consistent name when used with gcc, clang, msvc
   set_target_properties(rlutilities_cpp PROPERTIES PREFIX "")
