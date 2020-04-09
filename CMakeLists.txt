@@ -11,8 +11,9 @@ add_compile_options($<$<CXX_COMPILER_ID:MSVC>:/MP>)
 set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 
 set(rlu_sources
+  ${PROJECT_SOURCE_DIR}/src/linear_algebra/math.cc
 
-  # simulation
+  ${PROJECT_SOURCE_DIR}/src/simulation/game.cc
   ${PROJECT_SOURCE_DIR}/src/simulation/ball.cc
   ${PROJECT_SOURCE_DIR}/src/simulation/geometry.cc
   ${PROJECT_SOURCE_DIR}/src/simulation/mesh.cc
