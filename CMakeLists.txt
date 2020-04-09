@@ -19,9 +19,6 @@ set(rlu_sources
   ${PROJECT_SOURCE_DIR}/src/simulation/field.cc
   ${PROJECT_SOURCE_DIR}/src/simulation/bvh.cc
 
-  # resource files for meshes
-  ${PROJECT_SOURCE_DIR}/assets/assets.rc
-
 )
 
 if (TARGET_LANGUAGE STREQUAL "cpp" OR TARGET_LANGUAGE STREQUAL "both")
